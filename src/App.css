@@ -1,0 +1,227 @@
+.App {
+  font-family: "Rubik", sans-serif;
+  color: #303841;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 40px;
+  height: 100vh;
+}
+
+/* Updated styles for responsive layout */
+/* .mobile-layout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+} */
+
+/* .products,
+.cart {
+  width: calc(
+    50% - 10px
+  );
+  overflow-y: auto;
+  max-height: 80vh;
+  border: 1px solid #777777;
+  border-radius: 10px;
+  margin-bottom: 20px; 
+} */
+
+/* Hide scroll bars for WebKit browsers (Chrome, Safari)
+.products::-webkit-scrollbar,
+.cart::-webkit-scrollbar {
+  width: 12px;
+}
+
+.products::-webkit-scrollbar-thumb,
+.cart::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.products::-webkit-scrollbar-track,
+.cart::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.products-header,
+.cart-header {
+  padding: 10px;
+  background-color: #f6c90e;
+  color: #303841;
+  font-weight: bold;
+  border: 1px solid #777777;
+  border-radius: 10px;
+} */
+
+/* Media query for smaller screens */
+
+/* Add styles for the product list and cart separately */
+/* .products {
+  overflow-y: auto;
+  max-height: 80vh;
+} */
+
+/* .cart {
+  margin-left: 20px; 
+} */
+
+/* .product-card img,
+.cart-item img {
+  max-width: 100%;
+  border-radius: 28px;
+} */
+
+button {
+  background-color: #f6c90e;
+  color: #303841;
+  border: none;
+  border-radius: 28px;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-top: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.button-check {
+  transform-origin: left center;
+  transition: transform 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #f6c90e;
+  cursor: default;
+}
+
+.cart-item {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.cart-item button {
+  background-color: #e74c3c;
+  margin-top: 0;
+}
+
+.cart-item button:hover {
+  background-color: #c0392b;
+}
+
+span {
+  margin: 0 10px;
+}
+
+/* test */
+
+.screen {
+  width: 30%;
+  height: 500px;
+  padding: 12px 28px;
+  border: 1px solid #ccc;
+  border-radius: 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.screen::-webkit-scrollbar {
+  display: none;
+}
+
+.product-list,
+.cart {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0 10px;
+  gap: 80px;
+  overflow-y: auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.product-list::-webkit-scrollbar {
+  display: none;
+}
+
+.cart::-webkit-scrollbar {
+  display: none;
+}
+
+.cart {
+  display: block;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.image-nike {
+  width: 60px;
+}
+
+.image-container {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 28px;
+}
+
+.cart-items .image-container {
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+}
+
+.cart-items .image {
+  width: 110px;
+}
+
+.image {
+  width: 200px;
+  transform: rotate(-25deg);
+}
+
+.circle {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #f6c90e;
+  padding: 0;
+}
+
+.image-check {
+  width: 20px;
+}
+
+.price-and-button {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.button-cart {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-amount {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-item .info-cart {
+  flex: 1;
+}
