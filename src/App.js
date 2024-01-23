@@ -9,6 +9,7 @@ function App() {
   const [products, setProducts] = useState(productData);
   const [cart, setCart] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [isFirst, setIsFirst] = useState(true);
 
   const addToCart = (product) => {
     const updatedCart = [...cart, { ...product, quantity: 1 }];
@@ -16,7 +17,6 @@ function App() {
   };
 
   const removeFromCart = (productId) => {
-    console.log("🚀 ~ removeFromCart ~ productId:", productId);
     const updatedCart = cart.filter((item) => item.id !== productId);
     setCart(updatedCart);
   };
@@ -41,13 +41,15 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (cart && cart.length > 0)
+    if (!isFirst) {
       localStorage.setItem("cart", JSON.stringify(cart));
-    const newTotalPrice = cart.reduce(
-      (sum, item) => sum + item.price * item.quantity,
-      0
-    );
-    setTotalPrice(newTotalPrice);
+      const newTotalPrice = cart.reduce(
+        (sum, item) => sum + item.price * item.quantity,
+        0
+      );
+      setTotalPrice(newTotalPrice);
+    }
+    setIsFirst(false);
   }, [cart]);
 
   return (

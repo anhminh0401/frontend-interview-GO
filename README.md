@@ -1,3 +1,7 @@
+# Frontend-GO
+
+Sử dụng reactjs (create-react-app)
+
 ## Hướng Dẫn Chạy Cục Bộ
 
 ### Yêu Cầu
@@ -19,6 +23,7 @@ Sử dụng lệnh sau để bắt đầu dự án cục bộ:
 ```bash
 npm start
 ```
+Ứng dụng sẽ chạy tại http://localhost:3000.
 
 ## Triển khai
 
