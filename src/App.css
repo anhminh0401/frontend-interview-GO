@@ -1,76 +1,34 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 .App {
   font-family: "Rubik", sans-serif;
   color: #303841;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 20px;
   gap: 40px;
   height: 100vh;
+  background: linear-gradient(170deg, white 50%, #f6c90e 50%);
+  background-size: 200% 200%;
+  animation: colorChange 10s linear infinite;
 }
 
-/* Updated styles for responsive layout */
-/* .mobile-layout {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-} */
-
-/* .products,
-.cart {
-  width: calc(
-    50% - 10px
-  );
-  overflow-y: auto;
-  max-height: 80vh;
-  border: 1px solid #777777;
-  border-radius: 10px;
-  margin-bottom: 20px; 
-} */
-
-/* Hide scroll bars for WebKit browsers (Chrome, Safari)
-.products::-webkit-scrollbar,
-.cart::-webkit-scrollbar {
-  width: 12px;
+@keyframes colorChange {
+  0% {
+    background-position: 60% 50%;
+  }
+  50% {
+    background-position: 40% 50%;
+  }
+  100% {
+    background-position: 60% 50%;
+  }
 }
-
-.products::-webkit-scrollbar-thumb,
-.cart::-webkit-scrollbar-thumb {
-  background-color: transparent;
-}
-
-.products::-webkit-scrollbar-track,
-.cart::-webkit-scrollbar-track {
-  background-color: transparent;
-}
-
-.products-header,
-.cart-header {
-  padding: 10px;
-  background-color: #f6c90e;
-  color: #303841;
-  font-weight: bold;
-  border: 1px solid #777777;
-  border-radius: 10px;
-} */
-
-/* Media query for smaller screens */
-
-/* Add styles for the product list and cart separately */
-/* .products {
-  overflow-y: auto;
-  max-height: 80vh;
-} */
-
-/* .cart {
-  margin-left: 20px; 
-} */
-
-/* .product-card img,
-.cart-item img {
-  max-width: 100%;
-  border-radius: 28px;
-} */
 
 button {
   background-color: #f6c90e;
@@ -79,10 +37,14 @@ button {
   border-radius: 28px;
   padding: 8px 16px;
   cursor: pointer;
-  margin-top: 8px;
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
+  font-family: "Rubik", sans-serif;
+}
+
+button:hover {
+  background-color: #e0ac1c;
 }
 
 .button-check {
@@ -102,15 +64,6 @@ button {
   align-items: center;
 }
 
-.cart-item button {
-  background-color: #e74c3c;
-  margin-top: 0;
-}
-
-.cart-item button:hover {
-  background-color: #c0392b;
-}
-
 span {
   margin: 0 10px;
 }
@@ -119,12 +72,54 @@ span {
 
 .screen {
   width: 30%;
+  max-width: 400px;
   height: 500px;
-  padding: 12px 28px;
+  padding: 12px 28px 0;
   border: 1px solid #ccc;
   border-radius: 28px;
   display: flex;
   flex-direction: column;
+  background: radial-gradient(ellipse at 0% 0%, #f6c90e 100px, transparent 0);
+  background-color: #ffffff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width: 1000px) {
+  .screen {
+    width: 35%;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .screen {
+    width: 40%;
+  }
+}
+
+@media only screen and (max-width: 670px) {
+  .screen {
+    width: 45%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .App {
+    display: block;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  .screen {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .screen:first-child {
+    margin-bottom: 40px;
+  }
 }
 
 .screen::-webkit-scrollbar {
@@ -137,8 +132,8 @@ span {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 0 10px;
-  gap: 80px;
+  gap: 70px;
+  padding-bottom: 10px;
   overflow-y: auto;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
@@ -224,4 +219,22 @@ span {
 
 .cart-item .info-cart {
   flex: 1;
+}
+
+.button-amount .circle {
+  background-color: rgb(225, 231, 237);
+}
+
+button.add-cart {
+  font-weight: bold;
+}
+
+.exit-animation {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+/* Define the final state of the component */
+.exit-animation-exit {
+  opacity: 0;
 }
